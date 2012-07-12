@@ -1,0 +1,49 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>  
+<link rel="stylesheet" type="text/css" href="my.css">
+<style type="text/css">
+ p{
+     margin:0;
+ }
+  .code {
+    padding:10px;
+    background-color:#FFFFC0;
+    font-weight:bolder;
+    width:90%;
+    word-wrap: break-word;
+  }
+  .code span {
+      color:grey;
+      font-style:italic;
+  }
+</style>
+</head>
+<body>
+<h1>BTooLs - Magic SEO - Upgrade your website</h1>
+<h2>BMagicSEO PHP Class - made by B3aT (BTooLs.eu)</h2>
+<h2>The main function of the class : convert any kind of text (html,php,utf8,etc) to clean,safe,friendly SEO tags and links. Also calculate the Keyword density to improve your SEO.</h2>
+<h3>Version : 0.9 2011.09.2</h3>
+<h3>First step</h3>
+ <p>If your framework doesn`t autoload the class, include the class file : </p> 
+ <p class="code">require ('bmagicseo.class.php'); </p>
+ <p>Instantiate the class</p>
+ <p class="code">$bseo = new BMagicSeo();</p> 
+<h3>Make your own options, and setup the unwanted prepositions</h3>                           
+  <textarea rows="9" cols="90">$my_setings = array(
+            'trim'      => false, //disable the trim
+            //a small set of Romanian prepositions and usual small words
+            'prop'      => array('de la','cu','fara','in', 'intru','la','pe', 'de', 'pe la', 'de pe la', 'sub', 'sau','ori', 'orice', 'oricum', 'si', 'peste', 'printre', 'prin', 'dupa', 'din','de la', 'pana la', 'dintre', 'pentru') 
+    );</textarea>
+    
+
+<p class="code">$bseo->set_options($my_setings);<span>//send your options.</span></p>
+<h3>Make your links and meta tags.</h3>
+<p class="code">$bseo->seo_magic_link('&lt;h1>My &New #25 inches product!&lt;/h1>',20);<span>//result : my-new-25-inches-product</span></p>
+<p>Create a link with the product id included (45)</p>
+<p class="code">$bseo->seo_magic_link('&lt;h1>My &New #25 inches product!&lt;/h1>',20,45,false,'--');<span>//result : my_new_25_inches_product--45</span></p>
+      
+<h3>For more examples regarding the other functions see <a href="example.php">example.php</a> (source + output)</h3>
+<h3>If you use this class please post a comment on my website or create a link to btools.eu on yours. Thanks.</h3>
+</body>
+</html>
